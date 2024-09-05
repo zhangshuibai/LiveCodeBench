@@ -385,6 +385,12 @@ def format_prompt_generation(
             truncation=False,
             padding=False,
         )
+    ####09_03
+    if LanguageModelStyle == LMStyle.Combination:
+        # prompt = f"{PromptConstants.SYSTEM_MESSAGE_CODEQWEN}\n\n"
+        prompt = f"{get_generic_question_template_answer(question)}"
+        return prompt
+    ###
 
     raise NotImplementedError(
         f"LanguageModelStyle {LanguageModelStyle} not implemented"

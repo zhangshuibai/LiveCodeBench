@@ -30,6 +30,13 @@ def build_runner(args, model: LanguageModel):
         from lcb_runner.runner.deepseek_runner import DeepSeekRunner
 
         return DeepSeekRunner(args, model)
+    ###09_04
+    if model.model_style == LMStyle.Combination:
+        from lcb_runner.runner.combination_runner import CombinationRunner
+
+        return CombinationRunner(args, model)
+
+    ###
     elif model.model_style in []:
         raise NotImplementedError(
             f"Runner for language model style {model.model_style} not implemented yet"

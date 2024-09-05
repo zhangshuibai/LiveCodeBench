@@ -33,6 +33,10 @@ class LMStyle(Enum):
     DracarysLlama = "DracarysLlama"
     DracarysQwen = "DracarysQwen"
 
+    #09_03
+    Combination = "Combination"
+    ###
+
 
 @dataclass
 class LanguageModel:
@@ -613,6 +617,14 @@ LanguageModelList: list[LanguageModel] = [
         LMStyle.DracarysQwen,
         datetime(2023, 1, 1),
         link="https://huggingface.co/abacusai/Dracarys-72B-Instruct",
+    ),
+    ###09_03
+    LanguageModel(
+        "Combination_4_deepseek-chat",
+        "Combination_4_deepseek-chat",
+        LMStyle.Combination,
+        datetime(2023, 8, 1),
+        link="",
     ),
 ]
 
